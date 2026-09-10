@@ -85,13 +85,13 @@ export default function Footer() {
         </div> 
         <div className="divider"></div>
         <div className="border-t border-gray-100 py-6">
-  <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-slate-400 text-sm">
-    <p>© 2026 Dev Stack. All rights reserved.</p>
-    <div className="flex items-center space-x-6 mt-4 sm:mt-0">
-      <a href="#" className="hover:text-slate-600 transition-colors">Privacy</a>
-      <a href="#" className="hover:text-slate-600 transition-colors">Terms</a>
+    <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-slate-400 text-sm">
+        <p>© 2026 Dev Stack. All rights reserved.</p>
+        <div className="flex items-center space-x-6 mt-4 sm:mt-0">
+        <a href="#" className="hover:text-slate-600 transition-colors">Privacy</a>
+        <a href="#" className="hover:text-slate-600 transition-colors">Terms</a>
+        </div>
     </div>
-  </div>
 </div>
         
     </div>

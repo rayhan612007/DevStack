@@ -1,16 +1,29 @@
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import './App.css'
 import Navbar from './component/Navbar'
 import Herosection from './component/Herosection'
 import Footer from './component/Footer'
+import Technologysection from './component/Technologysection'
+import type { Datatype } from './Type/Datatype';
+import { ToastContainer } from 'react-toastify'
 
+const fetchdata = async ():Promise<[Datatype]> => {
+  const response = await fetch("/data.json");
+  const data = await response.json();
+  return data;
+};
 function App() {
   const [count, setCount] = useState(0)
+  const [promisedata] = useState(() => fetchdata());
 
   return (
     <div className='container'>
       <Navbar/>
       <Herosection/>
+      <Suspense fallback={<p>Loading.....</p>}>
+        <Technologysection promisedata = {promisedata}/>
+      </Suspense>
+      <ToastContainer position="bottom-right" autoClose={3000}/>
       <Footer/>
     </div>
   )
