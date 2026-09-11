@@ -7,11 +7,19 @@ interface selectedprops{
     selected:Datatype[];
     setSelected:Dispatch<SetStateAction<Datatype[]>>
     
+    
 }
 export default function SelectedCard({selected,setSelected}:selectedprops) {
-    const rmvhandle = ()=> {
+    const rmvall = ()=> {
         setSelected([ ]);
-    } ;
+    };
+    const rmvhandler = (card:Datatype)=>{
+        
+        const remaincard = selected.filter((item)=>item.name !== card.name);
+        
+        setSelected(remaincard);
+
+    }
     if(selected.length === 0){
         return (
           <div>
@@ -47,11 +55,11 @@ export default function SelectedCard({selected,setSelected}:selectedprops) {
 
                     <div className="space-y-3">
                     {selected.map((card) => (
-                        <CardSelect key={card.id} card={card} />
+                        <CardSelect key={card.id} card={card} rmvhandler={rmvhandler} />
                     ))}
                     </div>
                     <div>
-                        <button onClick={()=> rmvhandle()} className="w-full rounded-2xl mt-15 btn btn-outline btn-secondary">Remove All</button>
+                        <button onClick={()=> rmvall()} className="w-full rounded-2xl mt-15 btn btn-outline btn-secondary">Remove All</button>
                     </div>
 
                 </div>

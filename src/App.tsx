@@ -13,7 +13,6 @@ const fetchdata = async ():Promise<[Datatype]> => {
   return data;
 };
 function App() {
-  const [count, setCount] = useState(0)
   const [promisedata] = useState(() => fetchdata());
 
   return (

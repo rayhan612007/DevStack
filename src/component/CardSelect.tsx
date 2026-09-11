@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { type Dispatch, type SetStateAction } from 'react'
 import { IoMdClose } from 'react-icons/io'
 import type { Datatype } from './../Type/Datatype';
 interface cardprops {
     card:Datatype;
+    rmvhandler:(card:Datatype) => void;
 }
-export default function CardSelect({card}:cardprops) {
+export default function CardSelect({card ,rmvhandler}:cardprops) {
 return (
     <div className="w-full my-3 rounded-2xl border border-gray-100 bg-slate-50 p-4 shadow-sm hover:border-gray-200 transition-all">
       <div className="flex items-center justify-between">
         
-        {/* Left Side: Icon & Info */}
+
         <div className="flex items-center gap-3">
           <img src={card.icon} alt={card.name} className="h-10 w-10 object-contain" />
           <div>
@@ -18,11 +19,9 @@ return (
           </div>
         </div>
 
-        {/* Right Side: Remove Button */}
         <button
-          onClick={() =>(card.id)}
+          onClick={() => rmvhandler(card)}
           className="p-1 text-gray-400 hover:text-slate-700 transition-colors cursor-pointer rounded-lg hover:bg-gray-200/50"
-          aria-label="Remove item"
         >
           <IoMdClose className="text-2xl" />
         </button>

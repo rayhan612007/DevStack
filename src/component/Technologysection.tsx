@@ -9,14 +9,15 @@ interface promisedataprops {
 
 export default function Technologysection({ promisedata }: promisedataprops) {
     const carddata = use(promisedata);
-    const [selected,setSelected] = useState<Datatype[]>([]);
+
+    const [selected, setSelected] = useState<Datatype[]>([]);
 
 
     return (
         <div className="container mx-auto">
             <div className="space-y-2">
                 <h1 className="text-5xl font-bold ">
-                    Explore the <span className="font-bold bg-gradient-to-r from-pink-500 to-fuchsia-600 bg-clip-text text-transparent">
+                    Explore the <span className="font-bold bg-linear-to-r from-pink-500 to-fuchsia-600 bg-clip-text text-transparent">
                         Technologies
                     </span>
                 </h1>
@@ -25,11 +26,11 @@ export default function Technologysection({ promisedata }: promisedataprops) {
             <div className="grid grid-cols-4">
                 <div className="grid grid-cols-3  col-span-3">
                     {carddata.map((data: Datatype) => (
-                        <TechnologyCard key={data.id} data={data} selected = {selected} setSelected = {setSelected} />
+                        <TechnologyCard key={data.id} data={data}  selected = {selected} setSelected = {setSelected}  />
                     ))}
                 </div>
                 <div>
-                    <SelectedCard  selected = {selected} setSelected = {setSelected}/>
+                    <SelectedCard selected = {selected}  setSelected = {setSelected}/>
                 </div>
             </div>
         </div>

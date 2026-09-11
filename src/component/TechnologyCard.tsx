@@ -1,4 +1,4 @@
-import { useState, type Dispatch, type SetStateAction } from "react";
+import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import type { Datatype } from "../Type/Datatype";
 import { toast } from "react-toastify";
 
@@ -7,15 +7,20 @@ interface cardprops{
     data:Datatype;
     selected:Datatype[];
     setSelected:Dispatch<SetStateAction<Datatype[]>>
-    
+
 }
-export default function TechnologyCard({data,selected,setSelected}:cardprops) {
-    const [Isselected,setIsSelected]= useState(false);
+  export default function TechnologyCard({data,selected,setSelected}:cardprops) {
+    const [Isselected,setIsSelected] = useState<boolean>(false);
+    useEffect(() => {
+    const isExist = selected.some((item) => item.id === data.id);
+    setIsSelected(isExist); 
+  }, [selected, data.id]);
     const handlebtnclick = ()=>{
         setIsSelected(true);
         toast.success(`${data.name} Selected Sucessfully`);
         setSelected([...selected,data]);
     }
+
   return (
     <div className="flex items-center justify-center bg-slate-50 p-8">
       <div className="w-full max-w-sm rounded-3xl border border-slate-100 bg-white p-7 shadow-md">
@@ -30,7 +35,7 @@ export default function TechnologyCard({data,selected,setSelected}:cardprops) {
           </span>
         </div>
 
-        <h2 className="mt-5 text-2xl font-bold text-slate-900">React</h2>
+        <h2 className="mt-5 text-2xl font-bold text-slate-900">{data.name}</h2>
 
         <p className="mt-3 text-slate-500 leading-relaxed">
           {data.description}
