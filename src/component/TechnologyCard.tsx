@@ -22,8 +22,8 @@ interface cardprops{
     }
 
   return (
-    <div className="flex items-center justify-center bg-slate-50 p-8">
-      <div className="w-full max-w-sm rounded-3xl border border-slate-100 bg-white p-7 shadow-md">
+    <div className="flex items-center container justify-center bg-slate-50 p-2">
+      <div className="rounded-3xl border border-slate-100 bg-white p-7 shadow-md">
         <div className="flex items-start justify-between">
           <img
             src={data.icon}

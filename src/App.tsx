@@ -16,14 +16,14 @@ function App() {
   const [promisedata] = useState(() => fetchdata());
 
   return (
-    <div className='container'>
+    <div className='container mx-auto'>
       <Navbar/>
-      <Herosection/>
-      <Suspense fallback={<p>Loading.....</p>}>
-        <Technologysection promisedata = {promisedata}/>
-      </Suspense>
-      <ToastContainer position="bottom-right" autoClose={3000}/>
-      <Footer/>
+        <Herosection/>
+        <Suspense fallback={<p>Loading.....</p>}>
+          <Technologysection promisedata = {promisedata}/>
+        </Suspense>
+        <ToastContainer position="bottom-right" autoClose={3000}/>
+        <Footer/>
     </div>
   )
 }

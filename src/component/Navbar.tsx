@@ -1,39 +1,16 @@
-// import logo from "../assets/logo-text.png"
 
-// export default function Navbar() {
-//   return (
-//     <div>
 
-//       <div className='sticky top-0 z-50 container flex justify-between mx-auto items-center py-5'>
-//           <img src={logo} alt="Logo" />
-//           <ul className='flex justify-between gap-5'>
-//               <li>Home</li>
-//               <li>Technologies</li>
-//               <li>Projects</li>
-//               <li>About</li>
-//               <li>Contact</li>
-//           </ul>
-//           <div className='flex gap-1'>
-//               <button className="btn border-none bg-none  rounded-4xl ">Secondary</button>            
-//               <button className="btn btn-secondary rounded-4xl">Secondary</button>
-//           </div>
-//       </div>
-//           <div className="divider"></div>
-//     </div>
-//   )
-// }
-
+import { CiMenuBurger } from "react-icons/ci"
 import logo from "../assets/logo-text.png"
 
 export default function Navbar() {
   return (
-    <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg pt-5 ">
+    <div className="sticky container top-0 z-50 bg-white/80 backdrop-blur-lg pt-5 ">
 
       <div className='container flex justify-between mx-auto items-center'>
           
-          {/* Mobile Hamburger Button */}
           <button className="md:hidden p-2 text-slate-700 hover:text-slate-900 focus:outline-none">
-           
+            <CiMenuBurger />        
           </button>
 
           <img src={logo} alt="Logo" className="w-fit" />
@@ -48,10 +25,10 @@ export default function Navbar() {
           
           <div className='flex gap-1 sm:gap-3 items-center'>
               <button className="btn border-none bg-none rounded-4xl px-3 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 transition">
-                Secondary
+                Sign In
               </button>            
               <button className="btn btn-secondary rounded-4xl">
-                Secondary
+                Sign Up
               </button>
           </div>
       </div>

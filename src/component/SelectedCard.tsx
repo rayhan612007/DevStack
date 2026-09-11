@@ -1,7 +1,7 @@
-import React, { type Dispatch, type SetStateAction } from 'react'
+import { type Dispatch, type SetStateAction } from 'react'
 import type { Datatype } from '../Type/Datatype';
-import { IoMdClose } from 'react-icons/io';
 import CardSelect from './CardSelect';
+import { toast } from 'react-toastify';
 
 interface selectedprops{
     selected:Datatype[];
@@ -12,10 +12,13 @@ interface selectedprops{
 export default function SelectedCard({selected,setSelected}:selectedprops) {
     const rmvall = ()=> {
         setSelected([ ]);
+        toast.error("Removed all selected items");
+
     };
     const rmvhandler = (card:Datatype)=>{
         
         const remaincard = selected.filter((item)=>item.name !== card.name);
+                toast.error(` ${card.name} Item Removed`);
         
         setSelected(remaincard);
 
