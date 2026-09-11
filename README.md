@@ -52,24 +52,22 @@ A modern, interactive developer web application designed to help developers expl
 ## 💡 React Conceptual Questions & Answers
 
 ### 1. What is JSX, and why is it used in React?
-JSX stands for JavaScript XML. It allows developers to write HTML-like structures directly inside JavaScript files, making UI components easier to read, write, and maintain.
+JSX means Javascript XML. It allows to write HTML directly inside a Javascript file, to making easier to read and write and it maintain the code sequence.
 
 ### 2. What is the difference between props and state?
-* **Props (Properties):** Read-only data passed from a parent component down to a child component to configure it.
-* **State:** Internal, mutable data managed within a component that triggers a component re-render whenever it is updated.
+Props are only need when we want to pass input into a component from it's parent to child component. Otherside State is internally manage within the component that can changed and component are re-render when updated.
 
-### 3. What does the `useState` hook do, and where did you use it in this project?
-The `useState` hook allows functional components to store and manage dynamic state. In this project, it is used to track the array of selected technologies and manage dynamic lists in real-time.
+### 3. What does the useState hook do, and where did you use it in this project?
+useState allows a functional component to hold and update reactive data. It used to track of array and manage dynamic list
 
-### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
-`useEffect` handles side effects such as data fetching, subscriptions, or manual DOM mutations. In this project, it is used with an empty dependency array `[]` to execute an asynchronous `fetch()` call once when the page loads to pull data from a local JSON file.
+### 4. What does the useEffect hook do, and why did you need it to load the JSON data?
+useEffect handles side effects in React components when need to data fatching or DOM mutations. It used to run an asynchronous fetch() call once when the page load to data from local JSON file.
 
-### 5. Why does every item in a `.map()` list need a unique `key` prop?
-React relies on the unique `key` prop to keep track of individual list items across re-renders. This helps React efficiently identify which elements have been added, modified, or removed, avoiding unnecessary DOM updates.
+### 5. Why does every item in a .map() list need a unique key prop?
+React uses the unique Key prop to identify which items have changed, or added or removed.
 
 ### 6. What is conditional rendering? Show one place you used it.
-Conditional rendering is the process of displaying specific UI elements or components based on a boolean condition (true/false). For example, displaying a empty state message when the stack array is empty versus rendering the selected item list when data exists.
+Conditional rendering means showing different UI elements depending on a specific condition when it's true or false.
 
 ### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
-* **Parent to Child:** Data flows downward via `props`.
-* **Child to Parent:** The parent component passes down a callback function as a prop, which the child component invokes with data passed as arguments.
+Data flows down from a parent to a child component using props .The parent passes a callback function down as a prop then trigger with data as an argument from child component.
