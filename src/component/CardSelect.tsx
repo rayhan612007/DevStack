@@ -1,4 +1,3 @@
-import React, { type Dispatch, type SetStateAction } from 'react'
 import { IoMdClose } from 'react-icons/io'
 import type { Datatype } from './../Type/Datatype';
 interface cardprops {
