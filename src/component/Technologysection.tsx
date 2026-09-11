@@ -17,7 +17,7 @@ export default function Technologysection({ promisedata }: promisedataprops) {
         <div className="container mx-auto px-4 py-8">
             <div className="space-y-2 text-center md:text-left">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-                    Explore the <span className="font-bold bg-linear-to-r from-pink-500 to-fuchsia-600 bg-clip-text text-transparent">
+                    Explore the <span className="font-bold bg-linear-to-r from-orange-400 via-pink-500 to-violet-600 bg-clip-text text-transparent">
                         Technologies
                     </span>
                 </h1>

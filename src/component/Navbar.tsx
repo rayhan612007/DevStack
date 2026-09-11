@@ -24,7 +24,7 @@ export default function Navbar() {
           </ul>
           
           <div className='flex gap-1 sm:gap-3 items-center'>
-              <button className="btn border-none bg-none rounded-4xl px-3 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 transition">
+              <button className="rounded-4xl px-3 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 transition">
                 Sign In
               </button>            
               <button className="btn btn-secondary rounded-4xl">

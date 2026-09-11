@@ -51,7 +51,7 @@ export default function SelectedCard({selected,setSelected}:selectedprops) {
                     <div className="mb-4">
                     <h1 className="text-2xl font-bold text-slate-900">Your Stack</h1>
                     <p className="text-gray-400 text-md">
-                        {selected.length} {selected.length === 1 ? "Technology" : "Technologies"} selected
+                        {selected.length} Technology Selected
                     </p>
                     </div>
 
